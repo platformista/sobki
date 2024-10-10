@@ -15,5 +15,13 @@ if [ -n "$(drush status --field=bootstrap)" ]; then
     echo "No config to import. Skipping."
   fi
 else
-  echo "Drupal not installed. Skipping standard Drupal deploy steps"
+  echo "Drupal not installed. Installing using Sobki Bootstrap profile now..."
+  drush -y site-install sobki_profile_bootstrap
+  drush -y cache-rebuild
+  drush -y updatedb
+  if [ -n "$(ls $(drush php:eval "echo realpath(Drupal\Core\Site\Settings::get('config_sync_directory'));")/*.yml 2>/dev/null)" ]; then
+    drush -y config-import
+  else
+    echo "No config to import. Skipping."
+  fi
 fi
