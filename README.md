@@ -60,6 +60,7 @@ upsun environment:init https://github.com/platformista/sobki
 ### 3. Access Your Application
 
 Once deployed, you can access your Drupal installation via the generated URL provided by either Platform.sh or Upsun.
+The Sobki profile is automatically installed on the first deploy, and the initial admin credentials are printed in the first deployment log.
 
 ## Customization
 
