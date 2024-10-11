@@ -1,3 +1,22 @@
-<p align="center"><a href="https://console.platform.sh/projects/create-project/?template=https://raw.githubusercontent.com/platformista/sobki/refs/heads/main/template-definition.yaml&utm_campaign=deploy_on_platform?utm_medium=button&utm_source=affiliate_links&utm_content=https://github.com/platformista/sobki/blob/main/template-definition.yaml" target="_blank" title="Deploy with Platform.sh"><img src="https://platform.sh/images/deploy/deploy-button-lg-blue.svg"></a></p>
+ConvSun
+=========
 
-This is a Platform.sh template for the [Sobki Drupal Profile, Bootstrap](https://www.drupal.org/project/sobki_profile_bootstrap) flavour.
+This CLI-tool uses **Platform.sh** config files *(routes.yaml, services.yaml and .platform.app.yaml(s)/applications.yaml)* to generate the **Upsun** config file *(config.yaml)*  
+> **WARNING : This tool handles classic 'multi-app...' cases but has not been tested for snowflack cases.**
+
+#### Install
+
+Download the last binary in [release section](https://github.com/upsun/convsun/releases).
+Extract it and enjoy !
+
+#### Syntax
+```
+Usage of convsun:
+      --src string          Source project path to convert (default "./")
+      --dst string          Destination project path where converted
+      --mount_type string   Change 'Local' mount to upsun compatible mode : storage or instance. (default "storage")
+  -v, --verbose             Enable verbose mode
+```
+
+#### Sample
+`$ upsun_convert --src=tests/convert"`
